@@ -1,0 +1,30 @@
+<div id="<%= dom_id comment %>">
+
+<div style="display: flex;">
+
+  <div style="padding-right: 20px;">
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.commenter %>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <strong>Content:</strong>
+      <%= comment.content %>
+    </p>
+  </div>
+
+</div>
+
+  <%
+=begin%>
+ <p>
+    <strong>Blog:</strong>
+    <%= comment.blog_id %>
+  </p> 
+<%
+=end%>
+
+</div>

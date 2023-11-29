@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @blog %>
+
+
+<h2>Comments</h2>
+<%= render @blog.comments %>
+
+<%= form_with(model: [ @blog, Comment.new ], local: true) do |form| %>
+  
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_area :commenter %>
+  </p>
+  
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </p>
+
+  <%= form.hidden_field :blog_id, value: @blog.id %>
+
+  <p>
+    <%= form.submit "Add Comment" %>
+  </p>
+
+<% end %>
+
+<div>
+  <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
+  <%= link_to "Back to blogs", blogs_path %>
+
+  <%= button_to "Destroy this blog", @blog, method: :delete %>
+</div>
